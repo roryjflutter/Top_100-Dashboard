@@ -37,7 +37,7 @@
   .big-count{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,9vw,4.5rem);font-weight:900;color:var(--gold);line-height:1;text-align:right;}
   .big-count sub{font-size:0.4em;color:var(--sand);vertical-align:baseline;}
   .prog-bar-wrap{margin-top:1.5rem;background:rgba(255,255,255,0.08);border-radius:4px;height:6px;overflow:hidden;}
-  .prog-bar-fill{height:100%;width:27%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:4px;}
+  .prog-bar-fill{height:100%;width:28%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:4px;}
   .prog-labels{display:flex;justify-content:space-between;color:var(--sand);font-size:0.72rem;margin-top:0.4rem;}
 
   .section-wrap{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;}
@@ -52,82 +52,6 @@
   .stat-value{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green);line-height:1.1;}
   .stat-sub{font-size:0.72rem;color:var(--muted);margin-top:0.1rem;}
 
-  /* ── BESPOKE YEAR CHART ── */
-  .year-chart-card {
-    background: var(--green);
-    border-radius: 16px;
-    padding: 2rem 2rem 1.5rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-    margin-bottom: 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .year-chart-card::before {
-    content: '';
-    position: absolute; top: -80px; right: -80px;
-    width: 260px; height: 260px; border-radius: 50%;
-    border: 50px solid rgba(201,168,76,0.07);
-    pointer-events: none;
-  }
-  .year-chart-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--sand);
-    margin-bottom: 1.75rem;
-  }
-  .year-rows { display: grid; gap: 1.1rem; position: relative; z-index: 1; }
-  .year-row { display: flex; align-items: center; gap: 1rem; }
-  .year-label {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--gold);
-    min-width: 3.2rem;
-    flex-shrink: 0;
-  }
-  .year-bar-track {
-    flex: 1;
-    height: 10px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-  }
-  .year-bar-fill {
-    height: 100%;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #4a8c62, #c9a84c);
-    width: 0%;
-    transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
-  }
-  .year-count {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: white;
-    min-width: 2rem;
-    text-align: right;
-    flex-shrink: 0;
-    line-height: 1;
-  }
-  .year-unit {
-    font-size: 0.65rem;
-    font-weight: 400;
-    font-family: 'DM Sans', sans-serif;
-    color: var(--sand);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    min-width: 3.5rem;
-    flex-shrink: 0;
-  }
-  /* divider between years */
-  .year-rows .year-row:not(:last-child)::after {
-    display: none;
-  }
-
   .country-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:0.75rem;}
   .cc{background:white;border-radius:12px;padding:1.25rem;box-shadow:0 2px 10px rgba(0,0,0,0.06);}
   .cc-flag{height:28px;width:auto;display:block;margin-bottom:0.4rem;}
@@ -138,6 +62,17 @@
   .cc-bar-fill{height:100%;background:linear-gradient(90deg,var(--green-light),var(--gold));border-radius:4px;}
   .cc-pct{font-size:0.7rem;color:var(--muted);margin-top:0.3rem;}
 
+  .year-chart-card{background:var(--green);border-radius:16px;padding:2rem 2rem 1.5rem;box-shadow:0 4px 24px rgba(0,0,0,0.12);position:relative;overflow:hidden;}
+  .year-chart-card::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;border:50px solid rgba(201,168,76,0.07);pointer-events:none;}
+  .year-chart-title{font-family:'DM Sans',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--sand);margin-bottom:1.75rem;}
+  .year-rows{display:grid;gap:1.1rem;position:relative;z-index:1;}
+  .year-row{display:flex;align-items:center;gap:1rem;}
+  .year-label{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold);min-width:3.2rem;flex-shrink:0;}
+  .year-bar-track{flex:1;height:10px;background:rgba(255,255,255,0.08);border-radius:6px;overflow:hidden;}
+  .year-bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#4a8c62,#c9a84c);width:0%;transition:width 1.2s cubic-bezier(0.4,0,0.2,1);}
+  .year-count{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:white;min-width:2rem;text-align:right;flex-shrink:0;line-height:1;}
+  .year-unit{font-size:0.65rem;font-weight:400;font-family:'DM Sans',sans-serif;color:var(--sand);letter-spacing:0.06em;text-transform:uppercase;min-width:3.5rem;flex-shrink:0;}
+
   #map{height:500px;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.12);}
   @media(max-width:600px){#map{height:370px;}}
   .map-legend{display:flex;gap:1.5rem;margin-top:0.75rem;flex-wrap:wrap;}
@@ -145,15 +80,6 @@
   .leg-dot{width:12px;height:12px;border-radius:50%;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.25);}
   .leg-dot.p{background:var(--gold);}
   .leg-dot.u{background:var(--green-light);}
-
-  .scores-list{display:grid;gap:0.55rem;}
-  .score-row{background:white;border-radius:10px;padding:0.8rem 1rem;display:flex;align-items:center;gap:0.75rem;box-shadow:0 1px 6px rgba(0,0,0,0.05);}
-  .score-flag-img{height:18px;width:auto;flex-shrink:0;}
-  .score-name{flex:1;font-weight:500;color:var(--green);font-size:0.86rem;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-  .score-num{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--green);min-width:2.2rem;text-align:right;}
-  .score-bar-wrap{width:90px;height:8px;background:var(--cream-dark);border-radius:4px;overflow:hidden;flex-shrink:0;}
-  .score-bar-fill{height:100%;border-radius:4px;}
-  @media(max-width:480px){.score-bar-wrap{width:55px;}}
 
   .filter-bar{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1rem;}
   .fb{padding:0.3rem 0.8rem;border-radius:20px;border:1.5px solid var(--cream-dark);background:white;font-size:0.73rem;font-family:'DM Sans',sans-serif;cursor:pointer;color:var(--muted);transition:all 0.2s;}
@@ -170,6 +96,15 @@
   .ci.played .ci-tick{color:var(--gold);}
   .ci.unplayed .ci-tick{color:var(--cream-dark);}
 
+  .scores-list{display:grid;gap:0.55rem;}
+  .score-row{background:white;border-radius:10px;padding:0.8rem 1rem;display:flex;align-items:center;gap:0.75rem;box-shadow:0 1px 6px rgba(0,0,0,0.05);}
+  .score-flag-img{height:18px;width:auto;flex-shrink:0;}
+  .score-name{flex:1;font-weight:500;color:var(--green);font-size:0.86rem;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .score-num{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--green);min-width:2.2rem;text-align:right;}
+  .score-bar-wrap{width:90px;height:8px;background:var(--cream-dark);border-radius:4px;overflow:hidden;flex-shrink:0;}
+  .score-bar-fill{height:100%;border-radius:4px;}
+  @media(max-width:480px){.score-bar-wrap{width:55px;}}
+
   .tl-year-block{margin-bottom:2rem;}
   .tl-year-header{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.85rem;font-size:0.82rem;font-weight:500;letter-spacing:0.14em;color:var(--gold);}
   .tl-year-header::before,.tl-year-header::after{content:'—';}
@@ -181,20 +116,17 @@
   .tl-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.08rem;flex-shrink:0;}
   .tl-score{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--green);}
   .tl-date{font-size:0.72rem;color:var(--muted);}
-  .tl-noscore-label{font-size:0.72rem;color:var(--muted);font-style:italic;}
-  .tl-undated-header{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.85rem;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;color:var(--muted);}
-  .tl-undated-header::before,.tl-undated-header::after{content:'—';}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a href="#overview" class="nav-tab">Overview</a>
-    <a href="#map-section" class="nav-tab">Map</a>
-    <a href="#scores-section" class="nav-tab">Scores</a>
-    <a href="#courses-section" class="nav-tab">All Courses</a>
-    <a href="#timeline-section" class="nav-tab">Timeline</a>
+    <a href="#overview"          class="nav-tab">Overview</a>
+    <a href="#map-section"       class="nav-tab">Map</a>
+    <a href="#courses-section"   class="nav-tab">All Courses</a>
+    <a href="#scores-section"    class="nav-tab">Scores</a>
+    <a href="#timeline-section"  class="nav-tab">Timeline</a>
   </div>
 </nav>
 
@@ -206,65 +138,56 @@
         <div class="subtitle">⛳ UK &amp; Ireland</div>
       </div>
       <div>
-        <div class="big-count">27<sub> / 100</sub></div>
+        <div class="big-count">28<sub> / 100</sub></div>
         <div style="color:var(--sand);font-size:0.72rem;text-align:right;margin-top:0.2rem">courses completed</div>
       </div>
     </div>
     <div class="prog-bar-wrap"><div class="prog-bar-fill"></div></div>
-    <div class="prog-labels"><span>27 complete</span><span>73 remaining</span></div>
+    <div class="prog-labels"><span>28 complete</span><span>72 remaining</span></div>
   </div>
 </header>
 
-<!-- OVERVIEW -->
+<!-- ═══ OVERVIEW ═══ -->
 <div id="overview">
   <div class="section-wrap">
     <div class="sec-title">At a Glance</div>
-    <div class="stats-grid">
-      <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-value">27</div><div class="stat-sub">of 100 courses</div></div>
-      <div class="stat-card"><div class="stat-label">Remaining</div><div class="stat-value">73</div><div class="stat-sub">still to play</div></div>
-      <div class="stat-card"><div class="stat-label">Best Score</div><div class="stat-value">79</div><div class="stat-sub">Royal Cinque Ports</div></div>
-      <div class="stat-card"><div class="stat-label">Avg Score</div><div class="stat-value">85</div><div class="stat-sub">across scored rounds</div></div>
-    </div>
+    <div class="stats-grid" id="stats-grid"></div>
 
-    <div class="sec-title">Rounds per Year</div>
+    <div class="sec-title">Progress by Country</div>
+    <div class="country-grid" id="country-grid"></div>
+
+    <div class="sec-title" style="margin-top:1.75rem">Rounds per Year</div>
     <div class="year-chart-card">
       <div class="year-chart-title">Courses played each year</div>
       <div class="year-rows" id="year-rows"></div>
     </div>
-
-    <div class="sec-title" style="margin-top:1.75rem">Progress by Country</div>
-    <div class="country-grid" id="country-grid"></div>
   </div>
 </div>
 
 <hr class="section-divider">
+
+<!-- ═══ MAP ═══ -->
 <div id="map-section">
   <div class="section-wrap">
     <div class="sec-title">Course Map</div>
     <div id="map"></div>
     <div class="map-legend">
-      <div class="leg-item"><div class="leg-dot p"></div> Played (27)</div>
-      <div class="leg-item"><div class="leg-dot u"></div> Yet to play (73)</div>
+      <div class="leg-item"><div class="leg-dot p"></div> Played (28)</div>
+      <div class="leg-item"><div class="leg-dot u"></div> Yet to play (72)</div>
     </div>
   </div>
 </div>
 
 <hr class="section-divider">
-<div id="scores-section">
-  <div class="section-wrap">
-    <div class="sec-title">Scores</div>
-    <div class="scores-list" id="scores-list"></div>
-  </div>
-</div>
 
-<hr class="section-divider">
+<!-- ═══ ALL COURSES ═══ -->
 <div id="courses-section">
   <div class="section-wrap">
     <div class="sec-title">All 100 Courses</div>
     <div class="filter-bar">
       <button class="fb active" onclick="filterCourses('all',this)">All (100)</button>
-      <button class="fb" onclick="filterCourses('played',this)">✓ Played (27)</button>
-      <button class="fb" onclick="filterCourses('unplayed',this)">○ Remaining (73)</button>
+      <button class="fb" onclick="filterCourses('played',this)">✓ Played (28)</button>
+      <button class="fb" onclick="filterCourses('unplayed',this)">○ Remaining (72)</button>
       <button class="fb" onclick="filterCourses('Scotland',this)">Scotland</button>
       <button class="fb" onclick="filterCourses('Ireland',this)">Ireland</button>
       <button class="fb" onclick="filterCourses('England',this)">England</button>
@@ -275,6 +198,18 @@
 </div>
 
 <hr class="section-divider">
+
+<!-- ═══ SCORES ═══ -->
+<div id="scores-section">
+  <div class="section-wrap">
+    <div class="sec-title">Scores</div>
+    <div class="scores-list" id="scores-list"></div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ═══ TIMELINE ═══ -->
 <div id="timeline-section">
   <div class="section-wrap">
     <div class="sec-title">Timeline</div>
@@ -283,160 +218,137 @@
 </div>
 
 <script>
-const IRELAND='ie', SCOTLAND='gb-sct', ENGLAND='gb-eng', WALES='gb-wls', IOM='im', JERSEY='je';
+const IE='ie', SCO='gb-sct', ENG='gb-eng', WAL='gb-wls', IOM='im', JEY='je';
 
+// Rule: played = true ONLY when entry has BOTH a date AND a score.
+// Courses listed without date/score are in the top 100 but not yet completed.
 const courses = [
-  { name:"Royal County Down (Championship)",         fc:IRELAND,  country:"Ireland",     played:true,  date:null,       score:null, lat:54.224, lng:-5.843 },
-  { name:"St Andrews (Old)",                          fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:56.342, lng:-2.802 },
-  { name:"Trump Turnberry (Ailsa)",                   fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:55.310, lng:-4.831 },
-  { name:"Muirfield",                                 fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:56.034, lng:-2.803 },
-  { name:"Royal Dornoch (Championship)",              fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:57.877, lng:-4.028 },
-  { name:"Royal Portrush (Championship)",             fc:IRELAND,  country:"Ireland",     played:true,  date:"12/05/24", score:88,   lat:55.206, lng:-6.658 },
-  { name:"Ballybunion (Old)",                         fc:IRELAND,  country:"Ireland",     played:true,  date:"05/07/22", score:82,   lat:52.510, lng:-9.672 },
-  { name:"Royal St George's",                         fc:ENGLAND,  country:"England",     played:true,  date:"25/11/25", score:83,   lat:51.355, lng:1.389  },
-  { name:"North Berwick (West)",                      fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:56.060, lng:-2.726 },
-  { name:"Lahinch (Old)",                             fc:IRELAND,  country:"Ireland",     played:true,  date:null,       score:null, lat:52.934, lng:-9.348 },
-  { name:"Carnoustie (Championship)",                 fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:56.502, lng:-2.713 },
-  { name:"Royal Birkdale",                            fc:ENGLAND,  country:"England",     played:true,  date:null,       score:null, lat:53.626, lng:-3.017 },
-  { name:"Rosapenna (St Patrick's)",                  fc:IRELAND,  country:"Ireland",     played:true,  date:"14/06/23", score:83,   lat:55.228, lng:-7.869 },
-  { name:"Portmarnock (Championship)",                fc:IRELAND,  country:"Ireland",     played:true,  date:null,       score:null, lat:53.424, lng:-6.133 },
-  { name:"Kingsbarns",                                fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:56.273, lng:-2.659 },
-  { name:"Castle Stuart",                             fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:57.482, lng:-4.107 },
-  { name:"Royal Aberdeen (Balgownie)",                fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:57.182, lng:-2.095 },
-  { name:"Royal Lytham & St Annes",                   fc:ENGLAND,  country:"England",     played:true,  date:"15/10/23", score:82,   lat:53.735, lng:-2.994 },
-  { name:"Trump International – Scotland",            fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:57.350, lng:-1.980 },
-  { name:"Cruden Bay (Championship)",                 fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:57.410, lng:-1.875 },
-  { name:"Royal Porthcawl",                           fc:WALES,    country:"Wales",       played:true,  date:"13/06/23", score:87,   lat:51.481, lng:-3.712 },
-  { name:"St Enodoc (Church)",                        fc:ENGLAND,  country:"England",     played:true,  date:null,       score:null, lat:50.567, lng:-4.908 },
-  { name:"Royal Cinque Ports",                        fc:ENGLAND,  country:"England",     played:true,  date:"24/11/25", score:79,   lat:51.220, lng:1.378  },
-  { name:"Royal Troon (Old)",                         fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:55.545, lng:-4.675 },
-  { name:"The European Club",                         fc:IRELAND,  country:"Ireland",     played:true,  date:null,       score:null, lat:52.866, lng:-6.098 },
-  { name:"Prestwick",                                 fc:SCOTLAND, country:"Scotland",    played:true,  date:null,       score:null, lat:55.497, lng:-4.615 },
-  { name:"Waterville",                                fc:IRELAND,  country:"Ireland",     played:true,  date:null,       score:null, lat:51.826, lng:-10.189},
-  { name:"Dumbarnie Links",                           fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:56.222, lng:-2.976 },
-  { name:"Western Gailes",                            fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:55.616, lng:-4.740 },
-  { name:"Royal Liverpool",                           fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:53.385, lng:-3.180 },
-  { name:"Royal West Norfolk",                        fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:52.968, lng:0.434  },
-  { name:"Machrihanish (Championship)",               fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:55.440, lng:-5.713 },
-  { name:"Rye (Old)",                                 fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:50.934, lng:0.754  },
-  { name:"Silloth on Solway",                         fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:54.872, lng:-3.387 },
-  { name:"The Island",                                fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:53.490, lng:-6.086 },
-  { name:"Hillside",                                  fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:53.636, lng:-3.032 },
-  { name:"Formby",                                    fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:53.575, lng:-3.069 },
-  { name:"Saunton (East)",                            fc:ENGLAND,  country:"England",     played:true,  date:"23/03/23", score:91,   lat:51.134, lng:-4.227 },
-  { name:"County Sligo (Championship)",               fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:54.312, lng:-8.561 },
-  { name:"Nairn (Championship)",                      fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:57.591, lng:-3.869 },
-  { name:"Trump International – Ireland",             fc:IRELAND,  country:"Ireland",     played:true,  date:"03/06/22", score:null, lat:54.010, lng:-8.370 },
-  { name:"County Louth",                              fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:53.943, lng:-6.356 },
-  { name:"Machrie",                                   fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:55.760, lng:-6.376 },
-  { name:"Rosapenna (Sandy Hills)",                   fc:IRELAND,  country:"Ireland",     played:true,  date:"04/06/23", score:86,   lat:55.230, lng:-7.870 },
-  { name:"Burnham & Berrow",                          fc:ENGLAND,  country:"England",     played:true,  date:"14/06/23", score:81,   lat:51.261, lng:-3.012 },
-  { name:"Ballyliffin (Glashedy)",                    fc:IRELAND,  country:"Ireland",     played:true,  date:"13/06/23", score:87,   lat:55.479, lng:-7.392 },
-  { name:"Gullane (No. 1)",                           fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:56.031, lng:-2.833 },
-  { name:"Carne (Wild Atlantic Dunes)",               fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:54.253, lng:-10.023},
-  { name:"Enniscrone (Dunes)",                        fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:54.212, lng:-9.098 },
-  { name:"Hunstanton",                                fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:52.946, lng:0.493  },
-  { name:"Tralee",                                    fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:52.329, lng:-9.916 },
-  { name:"The Renaissance Club",                      fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:56.006, lng:-2.678 },
-  { name:"Narin & Portnoo",                           fc:IRELAND,  country:"Ireland",     played:true,  date:"11/05/24", score:87,   lat:54.667, lng:-8.473 },
-  { name:"Skibo Castle – Carnegie Club",              fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:57.875, lng:-4.165 },
-  { name:"Royal St David's",                          fc:WALES,    country:"Wales",       played:true,  date:"17/08/24", score:83,   lat:52.914, lng:-4.079 },
-  { name:"Portstewart (Strand)",                      fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:55.195, lng:-6.716 },
-  { name:"Pennard",                                   fc:WALES,    country:"Wales",       played:true,  date:"28/08/24", score:84,   lat:51.572, lng:-4.103 },
-  { name:"Machrihanish Dunes",                        fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:55.435, lng:-5.720 },
-  { name:"Aberdovey",                                 fc:WALES,    country:"Wales",       played:true,  date:"16/08/24", score:83,   lat:52.541, lng:-4.055 },
-  { name:"Prince's",                                  fc:ENGLAND,  country:"England",     played:true,  date:"23/11/25", score:87,   lat:51.348, lng:1.413  },
-  { name:"West Lancashire",                           fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:53.650, lng:-3.040 },
-  { name:"St Andrews (New)",                          fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:56.344, lng:-2.800 },
-  { name:"Brora",                                     fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:58.005, lng:-3.845 },
-  { name:"Ballyliffin (Old)",                         fc:IRELAND,  country:"Ireland",     played:true,  date:"03/06/23", score:83,   lat:55.477, lng:-7.390 },
-  { name:"Dundonald",                                 fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:55.601, lng:-4.683 },
-  { name:"Castletown",                                fc:IOM,      country:"Isle of Man", played:false, date:null,       score:null, lat:54.069, lng:-4.656 },
-  { name:"Moray (Old)",                               fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:57.643, lng:-3.307 },
-  { name:"Southport & Ainsdale",                      fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:53.617, lng:-3.028 },
-  { name:"Castlerock",                                fc:IRELAND,  country:"Ireland",     played:true,  date:"13/05/24", score:86,   lat:55.163, lng:-6.784 },
-  { name:"Donegal",                                   fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:54.577, lng:-8.636 },
-  { name:"La Moye",                                   fc:JERSEY,   country:"Jersey",      played:false, date:null,       score:null, lat:49.184, lng:-2.220 },
-  { name:"Saunton (West)",                            fc:ENGLAND,  country:"England",     played:true,  date:"12/03/23", score:90,   lat:51.133, lng:-4.228 },
-  { name:"Portmarnock Resort & Jameson Links",        fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:53.420, lng:-6.130 },
-  { name:"Royal North Devon",                         fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:51.065, lng:-4.226 },
-  { name:"Portsalon",                                 fc:IRELAND,  country:"Ireland",     played:true,  date:"10/05/24", score:90,   lat:55.203, lng:-7.642 },
-  { name:"Panmure",                                   fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:56.533, lng:-2.771 },
-  { name:"Royal Dublin",                              fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:53.369, lng:-6.136 },
-  { name:"Elie",                                      fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:56.188, lng:-2.822 },
-  { name:"Conwy",                                     fc:WALES,    country:"Wales",       played:true,  date:"18/08/24", score:88,   lat:53.282, lng:-3.826 },
-  { name:"Wallasey",                                  fc:ENGLAND,  country:"England",     played:true,  date:"16/10/24", score:81,   lat:53.426, lng:-3.058 },
-  { name:"Lundin",                                    fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:56.215, lng:-2.986 },
-  { name:"Connemara (Championship)",                  fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:53.414, lng:-9.931 },
-  { name:"Archerfield (Fidra)",                       fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:56.051, lng:-2.828 },
-  { name:"Dooks",                                     fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:52.063, lng:-9.878 },
-  { name:"Royal Portrush (Valley)",                   fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:55.207, lng:-6.660 },
-  { name:"Hayling",                                   fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:50.786, lng:-1.021 },
-  { name:"Ballybunion (Cashen)",                      fc:IRELAND,  country:"Ireland",     played:false, date:null,       score:null, lat:52.512, lng:-9.674 },
-  { name:"Murcar Links",                              fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:57.190, lng:-2.075 },
-  { name:"Trevose",                                   fc:ENGLAND,  country:"England",     played:true,  date:"17/01/23", score:81,   lat:50.538, lng:-4.991 },
-  { name:"Trump Turnberry (King Robert the Bruce)",   fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:55.312, lng:-4.833 },
-  { name:"Dunbar",                                    fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:55.995, lng:-2.500 },
-  { name:"Littlestone (Championship)",                fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:50.986, lng:0.977  },
-  { name:"Gullane (No. 2)",                           fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:56.033, lng:-2.831 },
-  { name:"Ashburnham",                                fc:WALES,    country:"Wales",       played:true,  date:"29/07/22", score:84,   lat:51.747, lng:-4.259 },
-  { name:"Seacroft",                                  fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:53.073, lng:0.509  },
-  { name:"Tenby",                                     fc:WALES,    country:"Wales",       played:true,  date:"30/07/22", score:90,   lat:51.675, lng:-4.697 },
-  { name:"Perranporth",                               fc:ENGLAND,  country:"England",     played:true,  date:"26/07/25", score:83,   lat:50.336, lng:-5.157 },
-  { name:"Seaton Carew (Micklem)",                    fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:54.667, lng:-1.195 },
-  { name:"Southerness",                               fc:SCOTLAND, country:"Scotland",    played:false, date:null,       score:null, lat:54.883, lng:-3.618 },
-  { name:"Goswick",                                   fc:ENGLAND,  country:"England",     played:false, date:null,       score:null, lat:55.663, lng:-1.937 },
+
+  // ── PLAYED (28) — each has a date + score ─────────────────────────────
+  { name:"St Enodoc (Church)",                       fc:ENG, country:"England",    played:true,  date:"23/01/22", score:82,  lat:50.567,  lng:-4.908  },
+  { name:"Ballybunion (Old)",                        fc:IE,  country:"Ireland",    played:true,  date:"05/07/22", score:82,  lat:52.510,  lng:-9.672  },
+  { name:"Trump International – Ireland",            fc:IE,  country:"Ireland",    played:true,  date:"03/06/22", score:89,  lat:54.010,  lng:-8.370  },
+  { name:"Ashburnham",                               fc:WAL, country:"Wales",      played:true,  date:"29/07/22", score:84,  lat:51.747,  lng:-4.259  },
+  { name:"Tenby",                                    fc:WAL, country:"Wales",      played:true,  date:"30/07/22", score:90,  lat:51.675,  lng:-4.697  },
+  { name:"Trevose",                                  fc:ENG, country:"England",    played:true,  date:"17/01/23", score:81,  lat:50.538,  lng:-4.991  },
+  { name:"Saunton (West)",                           fc:ENG, country:"England",    played:true,  date:"12/03/23", score:90,  lat:51.133,  lng:-4.228  },
+  { name:"Saunton (East)",                           fc:ENG, country:"England",    played:true,  date:"23/03/23", score:91,  lat:51.134,  lng:-4.227  },
+  { name:"Ballyliffin (Old)",                        fc:IE,  country:"Ireland",    played:true,  date:"03/06/23", score:83,  lat:55.477,  lng:-7.390  },
+  { name:"Rosapenna (Sandy Hills)",                  fc:IE,  country:"Ireland",    played:true,  date:"04/06/23", score:86,  lat:55.230,  lng:-7.870  },
+  { name:"Royal Porthcawl",                          fc:WAL, country:"Wales",      played:true,  date:"13/06/23", score:87,  lat:51.481,  lng:-3.712  },
+  { name:"Ballyliffin (Glashedy)",                   fc:IE,  country:"Ireland",    played:true,  date:"13/06/23", score:87,  lat:55.479,  lng:-7.392  },
+  { name:"Burnham & Berrow",                         fc:ENG, country:"England",    played:true,  date:"14/06/23", score:81,  lat:51.261,  lng:-3.012  },
+  { name:"Rosapenna (St Patrick's)",                 fc:IE,  country:"Ireland",    played:true,  date:"14/06/23", score:83,  lat:55.228,  lng:-7.869  },
+  { name:"Royal Lytham & St Annes",                  fc:ENG, country:"England",    played:true,  date:"15/10/23", score:82,  lat:53.735,  lng:-2.994  },
+  { name:"Portsalon",                                fc:IE,  country:"Ireland",    played:true,  date:"10/05/24", score:90,  lat:55.203,  lng:-7.642  },
+  { name:"Narin & Portnoo",                          fc:IE,  country:"Ireland",    played:true,  date:"11/05/24", score:87,  lat:54.667,  lng:-8.473  },
+  { name:"Royal Portrush (Championship)",            fc:IE,  country:"Ireland",    played:true,  date:"12/05/24", score:88,  lat:55.206,  lng:-6.658  },
+  { name:"Castlerock",                               fc:IE,  country:"Ireland",    played:true,  date:"13/05/24", score:86,  lat:55.163,  lng:-6.784  },
+  { name:"Aberdovey",                                fc:WAL, country:"Wales",      played:true,  date:"16/08/24", score:83,  lat:52.541,  lng:-4.055  },
+  { name:"Royal St David's",                         fc:WAL, country:"Wales",      played:true,  date:"17/08/24", score:83,  lat:52.914,  lng:-4.079  },
+  { name:"Conwy",                                    fc:WAL, country:"Wales",      played:true,  date:"18/08/24", score:88,  lat:53.282,  lng:-3.826  },
+  { name:"Pennard",                                  fc:WAL, country:"Wales",      played:true,  date:"28/08/24", score:84,  lat:51.572,  lng:-4.103  },
+  { name:"Wallasey",                                 fc:ENG, country:"England",    played:true,  date:"16/10/24", score:81,  lat:53.426,  lng:-3.058  },
+  { name:"Perranporth",                              fc:ENG, country:"England",    played:true,  date:"26/07/25", score:83,  lat:50.336,  lng:-5.157  },
+  { name:"Prince's",                                 fc:ENG, country:"England",    played:true,  date:"23/11/25", score:87,  lat:51.348,  lng:1.413   },
+  { name:"Royal Cinque Ports",                       fc:ENG, country:"England",    played:true,  date:"24/11/25", score:79,  lat:51.220,  lng:1.378   },
+  { name:"Royal St George's",                        fc:ENG, country:"England",    played:true,  date:"25/11/25", score:83,  lat:51.355,  lng:1.389   },
+
+  // ── NOT PLAYED (72) — no date+score ───────────────────────────────────
+  { name:"Royal County Down (Championship)",         fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:54.224,  lng:-5.843  },
+  { name:"St Andrews (Old)",                         fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.342,  lng:-2.802  },
+  { name:"Trump Turnberry (Ailsa)",                  fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.310,  lng:-4.831  },
+  { name:"Muirfield",                                fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.034,  lng:-2.803  },
+  { name:"Royal Dornoch (Championship)",             fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:57.877,  lng:-4.028  },
+  { name:"North Berwick (West)",                     fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.060,  lng:-2.726  },
+  { name:"Lahinch (Old)",                            fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:52.934,  lng:-9.348  },
+  { name:"Carnoustie (Championship)",                fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.502,  lng:-2.713  },
+  { name:"Royal Birkdale",                           fc:ENG, country:"England",    played:false, date:null, score:null, lat:53.626,  lng:-3.017  },
+  { name:"Portmarnock (Championship)",               fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:53.424,  lng:-6.133  },
+  { name:"Kingsbarns",                               fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.273,  lng:-2.659  },
+  { name:"Castle Stuart",                            fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:57.482,  lng:-4.107  },
+  { name:"Royal Aberdeen (Balgownie)",               fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:57.182,  lng:-2.095  },
+  { name:"Trump International – Scotland",           fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:57.350,  lng:-1.980  },
+  { name:"Cruden Bay (Championship)",                fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:57.410,  lng:-1.875  },
+  { name:"Royal Troon (Old)",                        fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.545,  lng:-4.675  },
+  { name:"The European Club",                        fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:52.866,  lng:-6.098  },
+  { name:"Prestwick",                                fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.497,  lng:-4.615  },
+  { name:"Waterville",                               fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:51.826,  lng:-10.189 },
+  { name:"Dumbarnie Links",                          fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.222,  lng:-2.976  },
+  { name:"Western Gailes",                           fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.616,  lng:-4.740  },
+  { name:"Royal Liverpool",                          fc:ENG, country:"England",    played:false, date:null, score:null, lat:53.385,  lng:-3.180  },
+  { name:"Royal West Norfolk",                       fc:ENG, country:"England",    played:false, date:null, score:null, lat:52.968,  lng:0.434   },
+  { name:"Machrihanish (Championship)",              fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.440,  lng:-5.713  },
+  { name:"Rye (Old)",                                fc:ENG, country:"England",    played:false, date:null, score:null, lat:50.934,  lng:0.754   },
+  { name:"Silloth on Solway",                        fc:ENG, country:"England",    played:false, date:null, score:null, lat:54.872,  lng:-3.387  },
+  { name:"The Island",                               fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:53.490,  lng:-6.086  },
+  { name:"Hillside",                                 fc:ENG, country:"England",    played:false, date:null, score:null, lat:53.636,  lng:-3.032  },
+  { name:"Formby",                                   fc:ENG, country:"England",    played:false, date:null, score:null, lat:53.575,  lng:-3.069  },
+  { name:"County Sligo (Championship)",              fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:54.312,  lng:-8.561  },
+  { name:"Nairn (Championship)",                     fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:57.591,  lng:-3.869  },
+  { name:"County Louth",                             fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:53.943,  lng:-6.356  },
+  { name:"Machrie",                                  fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.760,  lng:-6.376  },
+  { name:"Gullane (No. 1)",                          fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.031,  lng:-2.833  },
+  { name:"Carne (Wild Atlantic Dunes)",              fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:54.253,  lng:-10.023 },
+  { name:"Enniscrone (Dunes)",                       fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:54.212,  lng:-9.098  },
+  { name:"Hunstanton",                               fc:ENG, country:"England",    played:false, date:null, score:null, lat:52.946,  lng:0.493   },
+  { name:"Tralee",                                   fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:52.329,  lng:-9.916  },
+  { name:"The Renaissance Club",                     fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.006,  lng:-2.678  },
+  { name:"Skibo Castle – Carnegie Club",             fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:57.875,  lng:-4.165  },
+  { name:"Portstewart (Strand)",                     fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:55.195,  lng:-6.716  },
+  { name:"Machrihanish Dunes",                       fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.435,  lng:-5.720  },
+  { name:"West Lancashire",                          fc:ENG, country:"England",    played:false, date:null, score:null, lat:53.650,  lng:-3.040  },
+  { name:"St Andrews (New)",                         fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.344,  lng:-2.800  },
+  { name:"Brora",                                    fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:58.005,  lng:-3.845  },
+  { name:"Dundonald",                                fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.601,  lng:-4.683  },
+  { name:"Castletown",                               fc:IOM, country:"Isle of Man",played:false, date:null, score:null, lat:54.069,  lng:-4.656  },
+  { name:"Moray (Old)",                              fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:57.643,  lng:-3.307  },
+  { name:"Southport & Ainsdale",                     fc:ENG, country:"England",    played:false, date:null, score:null, lat:53.617,  lng:-3.028  },
+  { name:"Donegal",                                  fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:54.577,  lng:-8.636  },
+  { name:"La Moye",                                  fc:JEY, country:"Jersey",     played:false, date:null, score:null, lat:49.184,  lng:-2.220  },
+  { name:"Portmarnock Resort & Jameson Golf Links",  fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:53.420,  lng:-6.130  },
+  { name:"Royal North Devon",                        fc:ENG, country:"England",    played:false, date:null, score:null, lat:51.065,  lng:-4.226  },
+  { name:"Panmure",                                  fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.533,  lng:-2.771  },
+  { name:"Royal Dublin",                             fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:53.369,  lng:-6.136  },
+  { name:"Elie",                                     fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.188,  lng:-2.822  },
+  { name:"Lundin",                                   fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.215,  lng:-2.986  },
+  { name:"Connemara (Championship)",                 fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:53.414,  lng:-9.931  },
+  { name:"Archerfield (Fidra)",                      fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.051,  lng:-2.828  },
+  { name:"Dooks",                                    fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:52.063,  lng:-9.878  },
+  { name:"Royal Portrush (Valley)",                  fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:55.207,  lng:-6.660  },
+  { name:"Hayling",                                  fc:ENG, country:"England",    played:false, date:null, score:null, lat:50.786,  lng:-1.021  },
+  { name:"Ballybunion (Cashen)",                     fc:IE,  country:"Ireland",    played:false, date:null, score:null, lat:52.512,  lng:-9.674  },
+  { name:"Murcar Links",                             fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:57.190,  lng:-2.075  },
+  { name:"Trump Turnberry (King Robert the Bruce)",  fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.312,  lng:-4.833  },
+  { name:"Dunbar",                                   fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:55.995,  lng:-2.500  },
+  { name:"Littlestone (Championship)",               fc:ENG, country:"England",    played:false, date:null, score:null, lat:50.986,  lng:0.977   },
+  { name:"Gullane (No. 2)",                          fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:56.033,  lng:-2.831  },
+  { name:"Seacroft",                                 fc:ENG, country:"England",    played:false, date:null, score:null, lat:53.073,  lng:0.509   },
+  { name:"Seaton Carew (Micklem)",                   fc:ENG, country:"England",    played:false, date:null, score:null, lat:54.667,  lng:-1.195  },
+  { name:"Southerness",                              fc:SCO, country:"Scotland",   played:false, date:null, score:null, lat:54.883,  lng:-3.618  },
+  { name:"Goswick",                                  fc:ENG, country:"England",    played:false, date:null, score:null, lat:55.663,  lng:-1.937  },
 ];
 
-// ── YEAR CHART ─────────────────────────────────────────────────────────────
-(function buildYearChart() {
-  const byYear = {};
-  courses.forEach(c => {
-    if (!c.played || !c.date) return;
-    const yr = '20' + c.date.split('/')[2];
-    byYear[yr] = (byYear[yr] || 0) + 1;
-  });
+// ── DERIVED ────────────────────────────────────────────────────────────────
+const playedCourses  = courses.filter(c => c.played);
+const scoredCourses  = playedCourses.filter(c => c.score !== null);
+const bestScore      = Math.min(...scoredCourses.map(c => c.score));
+const bestCourse     = scoredCourses.find(c => c.score === bestScore);
+const avgScore       = Math.round(scoredCourses.reduce((s,c) => s+c.score, 0) / scoredCourses.length);
 
-  const years = Object.keys(byYear).sort();
-  const max = Math.max(...Object.values(byYear));
-  const container = document.getElementById('year-rows');
-
-  years.forEach((yr, i) => {
-    const count = byYear[yr];
-    const pct = (count / max) * 100;
-    const plural = count === 1 ? 'course' : 'courses';
-
-    const row = document.createElement('div');
-    row.className = 'year-row';
-    row.innerHTML = `
-      <span class="year-label">${yr}</span>
-      <div class="year-bar-track">
-        <div class="year-bar-fill" data-pct="${pct}" style="width:0%"></div>
-      </div>
-      <span class="year-count">${count}</span>
-      <span class="year-unit">${plural}</span>
-    `;
-    container.appendChild(row);
-  });
-
-  // Animate bars in on load with stagger
-  setTimeout(() => {
-    document.querySelectorAll('.year-bar-fill').forEach((bar, i) => {
-      setTimeout(() => {
-        bar.style.width = bar.dataset.pct + '%';
-      }, i * 150);
-    });
-  }, 300);
-})();
+// ── STATS CARDS ────────────────────────────────────────────────────────────
+document.getElementById('stats-grid').innerHTML = `
+  <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-value">${playedCourses.length}</div><div class="stat-sub">of 100 courses</div></div>
+  <div class="stat-card"><div class="stat-label">Remaining</div><div class="stat-value">${100-playedCourses.length}</div><div class="stat-sub">still to play</div></div>
+  <div class="stat-card"><div class="stat-label">Best Score</div><div class="stat-value">${bestScore}</div><div class="stat-sub">${bestCourse.name.split(' ').slice(0,3).join(' ')}</div></div>
+  <div class="stat-card"><div class="stat-label">Avg Score</div><div class="stat-value">${avgScore}</div><div class="stat-sub">across ${scoredCourses.length} rounds</div></div>
+`;
 
 // ── COUNTRY CARDS ──────────────────────────────────────────────────────────
-const countryMeta = {
-  'Scotland':{fc:SCOTLAND},'Ireland':{fc:IRELAND},'England':{fc:ENGLAND},
-  'Wales':{fc:WALES},'Isle of Man':{fc:IOM},'Jersey':{fc:JERSEY}
-};
+const countryMeta = { Scotland:{fc:SCO}, Ireland:{fc:IE}, England:{fc:ENG}, Wales:{fc:WAL}, 'Isle of Man':{fc:IOM}, Jersey:{fc:JEY} };
 const countryStats = {};
 courses.forEach(c => {
-  if (!countryStats[c.country]) countryStats[c.country]={total:0,played:0};
+  if (!countryStats[c.country]) countryStats[c.country] = {total:0, played:0};
   countryStats[c.country].total++;
   if (c.played) countryStats[c.country].played++;
 });
@@ -453,15 +365,64 @@ const cg = document.getElementById('country-grid');
   </div>`;
 });
 
+// ── YEAR CHART ─────────────────────────────────────────────────────────────
+(function(){
+  const byYear = {};
+  playedCourses.forEach(c => {
+    const yr = '20' + c.date.split('/')[2];
+    byYear[yr] = (byYear[yr]||0) + 1;
+  });
+  const years = Object.keys(byYear).sort();
+  const max   = Math.max(...Object.values(byYear));
+  const container = document.getElementById('year-rows');
+  years.forEach(yr => {
+    const count = byYear[yr];
+    const row = document.createElement('div');
+    row.className = 'year-row';
+    row.innerHTML = `
+      <span class="year-label">${yr}</span>
+      <div class="year-bar-track"><div class="year-bar-fill" data-pct="${(count/max)*100}" style="width:0%"></div></div>
+      <span class="year-count">${count}</span>
+      <span class="year-unit">${count===1?'course':'courses'}</span>`;
+    container.appendChild(row);
+  });
+  setTimeout(() => {
+    document.querySelectorAll('.year-bar-fill').forEach((bar,i) => {
+      setTimeout(() => { bar.style.width = bar.dataset.pct + '%'; }, i*150);
+    });
+  }, 300);
+})();
+
+// ── COURSE LIST ────────────────────────────────────────────────────────────
+function buildList(filter) {
+  const f = filter==='played'   ? courses.filter(c=>c.played)
+          : filter==='unplayed' ? courses.filter(c=>!c.played)
+          : ['all','played','unplayed'].includes(filter) ? courses
+          : courses.filter(c=>c.country===filter);
+  document.getElementById('course-list').innerHTML = f.map(c => `
+    <div class="ci ${c.played?'played':'unplayed'}">
+      <span class="ci-tick">${c.played?'✓':'○'}</span>
+      <img src="https://flagcdn.com/h24/${c.fc}.png" height="16" class="ci-flag-img" alt="">
+      <span class="ci-name">${c.name}</span>
+      ${c.date  ? `<span class="ci-date">${c.date}</span>`  : ''}
+      ${c.score ? `<span class="ci-score">${c.score}</span>` : ''}
+    </div>`).join('');
+}
+buildList('all');
+function filterCourses(f, btn) {
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  buildList(f);
+}
+
 // ── SCORES ─────────────────────────────────────────────────────────────────
-const scored = courses.filter(c=>c.score!==null).sort((a,b)=>a.score-b.score);
-const minS = Math.min(...scored.map(c=>c.score));
-const maxS = Math.max(...scored.map(c=>c.score));
-const sl = document.getElementById('scores-list');
-scored.forEach(c => {
-  const barPct = Math.round(((maxS-c.score)/(maxS-minS))*70+30);
-  const barColor = c.score<=82?'#43a047':c.score<=87?'#fb8c00':'#e53935';
-  sl.innerHTML += `<div class="score-row">
+const sorted = [...scoredCourses].sort((a,b) => a.score - b.score);
+const minS = Math.min(...sorted.map(c=>c.score));
+const maxS = Math.max(...sorted.map(c=>c.score));
+sorted.forEach(c => {
+  const barPct  = Math.round(((maxS-c.score)/(maxS-minS))*70+30);
+  const barColor = c.score<=82 ? '#43a047' : c.score<=87 ? '#fb8c00' : '#e53935';
+  document.getElementById('scores-list').innerHTML += `<div class="score-row">
     <img src="https://flagcdn.com/h24/${c.fc}.png" height="18" class="score-flag-img" alt="">
     <span class="score-name">${c.name}</span>
     <span class="score-num">${c.score}</span>
@@ -469,88 +430,62 @@ scored.forEach(c => {
   </div>`;
 });
 
-// ── COURSE LIST ────────────────────────────────────────────────────────────
-function buildList(filter) {
-  let f = filter==='played'   ? courses.filter(c=>c.played)
-        : filter==='unplayed' ? courses.filter(c=>!c.played)
-        : ['all','played','unplayed'].includes(filter) ? courses
-        : courses.filter(c=>c.country===filter);
-  document.getElementById('course-list').innerHTML = f.map(c=>`
-    <div class="ci ${c.played?'played':'unplayed'}">
-      <span class="ci-tick">${c.played?'✓':'○'}</span>
-      <img src="https://flagcdn.com/h24/${c.fc}.png" height="16" class="ci-flag-img" alt="">
-      <span class="ci-name">${c.name}</span>
-      ${c.date?`<span class="ci-date">${c.date}</span>`:''}
-      ${c.score?`<span class="ci-score">${c.score}</span>`:''}
-    </div>`).join('');
-}
-buildList('all');
-function filterCourses(f,btn){
-  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active'); buildList(f);
-}
-
 // ── TIMELINE ───────────────────────────────────────────────────────────────
-function parseDate(str){const[d,m,y]=str.split('/');return new Date(2000+parseInt(y),parseInt(m)-1,parseInt(d));}
-const withDate=courses.filter(c=>c.played&&c.date).sort((a,b)=>parseDate(a.date)-parseDate(b.date));
-const byYear2={};
-withDate.forEach(c=>{const yr='20'+c.date.split('/')[2];if(!byYear2[yr])byYear2[yr]=[];byYear2[yr].push(c);});
-const noDate=courses.filter(c=>c.played&&!c.date);
-const tlEl=document.getElementById('timeline');
-Object.keys(byYear2).sort((a,b)=>b-a).forEach(yr=>{
-  const rows=byYear2[yr].map(c=>`
+function parseDate(s) { const[d,m,y]=s.split('/'); return new Date(2000+parseInt(y),parseInt(m)-1,parseInt(d)); }
+const chronological = [...playedCourses].sort((a,b) => parseDate(a.date)-parseDate(b.date));
+const byYr = {};
+chronological.forEach(c => {
+  const y = '20'+c.date.split('/')[2];
+  if (!byYr[y]) byYr[y] = [];
+  byYr[y].push(c);
+});
+const tlEl = document.getElementById('timeline');
+Object.keys(byYr).sort((a,b)=>b-a).forEach(yr => {
+  const rows = byYr[yr].map(c => `
     <div class="tl-row">
       <img src="https://flagcdn.com/h24/${c.fc}.png" height="18" class="tl-flag-img" alt="">
       <span class="tl-name">${c.name}</span>
       <div class="tl-right">
-        ${c.score?`<span class="tl-score">${c.score}</span>`:'<span class="tl-noscore-label">no score</span>'}
+        <span class="tl-score">${c.score}</span>
         <span class="tl-date">${c.date}</span>
       </div>
     </div>`).join('');
-  tlEl.innerHTML+=`<div class="tl-year-block"><div class="tl-year-header">${yr}</div><div class="tl-rows">${rows}</div></div>`;
+  tlEl.innerHTML += `<div class="tl-year-block"><div class="tl-year-header">${yr}</div><div class="tl-rows">${rows}</div></div>`;
 });
-if(noDate.length){
-  const rows=noDate.map(c=>`
-    <div class="tl-row">
-      <img src="https://flagcdn.com/h24/${c.fc}.png" height="18" class="tl-flag-img" alt="">
-      <span class="tl-name">${c.name}</span>
-      <div class="tl-right"><span class="tl-noscore-label">date not recorded</span></div>
-    </div>`).join('');
-  tlEl.innerHTML+=`<div class="tl-year-block"><div class="tl-undated-header">Undated</div><div class="tl-rows">${rows}</div></div>`;
-}
 
 // ── MAP ────────────────────────────────────────────────────────────────────
-const map=L.map('map').setView([54.5,-4.0],5);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'©OpenStreetMap ©CartoDB',subdomains:'abcd',maxZoom:19}).addTo(map);
-const pIcon=L.divIcon({html:`<div style="width:14px;height:14px;background:#c9a84c;border:2.5px solid white;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,0.35)"></div>`,iconSize:[14,14],iconAnchor:[7,7],className:''});
-const uIcon=L.divIcon({html:`<div style="width:10px;height:10px;background:#4a8c62;border:2px solid white;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.2);opacity:0.75"></div>`,iconSize:[10,10],iconAnchor:[5,5],className:''});
-courses.forEach(c=>{
+const map = L.map('map').setView([54.5,-4.0],5);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+  {attribution:'©OpenStreetMap ©CartoDB',subdomains:'abcd',maxZoom:19}).addTo(map);
+const pIcon = L.divIcon({html:`<div style="width:14px;height:14px;background:#c9a84c;border:2.5px solid white;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,0.35)"></div>`,iconSize:[14,14],iconAnchor:[7,7],className:''});
+const uIcon = L.divIcon({html:`<div style="width:10px;height:10px;background:#4a8c62;border:2px solid white;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.2);opacity:0.75"></div>`,iconSize:[10,10],iconAnchor:[5,5],className:''});
+courses.forEach(c => {
   L.marker([c.lat,c.lng],{icon:c.played?pIcon:uIcon}).addTo(map)
    .bindPopup(`<div style="font-family:'DM Sans',sans-serif;min-width:165px;padding:2px">
       <img src="https://flagcdn.com/h24/${c.fc}.png" height="20" style="border-radius:2px;margin-bottom:5px;display:block" alt="">
       <div style="font-weight:600;color:#1a3a2a;font-size:0.88rem;margin-bottom:2px">${c.name}</div>
       <div style="font-size:0.73rem;color:#6b6b5a;margin-bottom:6px">${c.country}</div>
       ${c.played
-        ?`<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
-            <span style="background:#c9a84c;color:white;padding:2px 7px;border-radius:4px;font-size:0.7rem;font-weight:600">✓ Played</span>
-            ${c.date?`<span style="font-size:0.7rem;color:#6b6b5a">${c.date}</span>`:''}
-            ${c.score?`<span style="font-weight:700;color:#1a3a2a">${c.score}</span>`:''}
-          </div>`
-        :`<span style="color:#4a8c62;font-size:0.72rem">○ Yet to play</span>`}
+        ? `<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+             <span style="background:#c9a84c;color:white;padding:2px 7px;border-radius:4px;font-size:0.7rem;font-weight:600">✓ Played</span>
+             ${c.date  ? `<span style="font-size:0.7rem;color:#6b6b5a">${c.date}</span>` : ''}
+             ${c.score ? `<span style="font-weight:700;color:#1a3a2a">${c.score}</span>` : ''}
+           </div>`
+        : `<span style="color:#4a8c62;font-size:0.72rem">○ Yet to play</span>`}
     </div>`,{maxWidth:210});
 });
 
 // ── NAV SCROLL ─────────────────────────────────────────────────────────────
-const sections=['overview','map-section','scores-section','courses-section','timeline-section'].map(id=>document.getElementById(id));
-const tabs=document.querySelectorAll('.nav-tab');
-function updateNav(){
-  const mid=window.scrollY+window.innerHeight*0.35;
-  let cur=0;
-  sections.forEach((s,i)=>{if(s.offsetTop<=mid)cur=i;});
-  tabs.forEach(t=>t.classList.remove('active'));
+const sections = ['overview','map-section','courses-section','scores-section','timeline-section'].map(id=>document.getElementById(id));
+const tabs = document.querySelectorAll('.nav-tab');
+function updateNav() {
+  const mid = window.scrollY + window.innerHeight*0.35;
+  let cur = 0;
+  sections.forEach((s,i) => { if (s.offsetTop <= mid) cur = i; });
+  tabs.forEach(t => t.classList.remove('active'));
   tabs[cur].classList.add('active');
 }
-window.addEventListener('scroll',updateNav,{passive:true});
+window.addEventListener('scroll', updateNav, {passive:true});
 updateNav();
 </script>
 </body>
